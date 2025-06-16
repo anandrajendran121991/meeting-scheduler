@@ -35,7 +35,6 @@ Represents a meeting room.
 
 - `id: number`
 - `name: string`
-- `isOccupied: boolean`
 - `capacity: number`
 
 #### Method:

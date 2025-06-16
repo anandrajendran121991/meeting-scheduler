@@ -32,9 +32,9 @@ const now = new Date();
 const in1Hour = new Date(now.getTime() + 60 * 60 * 1000);
 const in2Hours = new Date(now.getTime() + 2 * 60 * 60 * 1000);
 
-system.bookRoom(1, [recipient1, recipient2], now, in1Hour); // ✅ Success
-system.bookRoom(1, [recipient1], now, in1Hour); // ❌ Conflict for recipient1
-system.bookRoom(2, [recipient1, recipient2, recipient2], now, in2Hours); // ❌ Over capacity
+system.bookMeetingRoom(1, [recipient1, recipient2], now, in1Hour); // ✅ Success
+system.bookMeetingRoom(1, [recipient1], now, in1Hour); // ❌ Conflict for recipient1
+system.bookMeetingRoom(2, [recipient1, recipient2, recipient2], now, in2Hours); // ❌ Over capacity
 
 // List rooms again
 system.listRooms();

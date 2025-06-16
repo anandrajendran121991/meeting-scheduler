@@ -1,16 +1,16 @@
-import { IPublisher, IRecipient } from "./Interfaces";
+import { IBookingSystem, IPublisher, IRecipient, IRoom } from "./Interfaces";
 import Meeting from "./Meeting";
 import Room from "./Room";
 import { isTimeOverlap } from "./Utils";
 
-class BookingSystem {
+class BookingSystem implements IBookingSystem {
   private rooms: Room[] = [];
   private meetings: Meeting[] = [];
   private nextMeetingId = 1;
 
   constructor(private publisher: IPublisher) {}
 
-  addRoom(room: Room) {
+  addRoom(room: IRoom) {
     this.rooms.push(room);
   }
 
@@ -21,7 +21,7 @@ class BookingSystem {
     }
   }
 
-  bookRoom(
+  bookMeetingRoom(
     roomId: number,
     recipients: IRecipient[],
     start: Date,

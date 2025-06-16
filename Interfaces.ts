@@ -25,7 +25,15 @@ export interface IRoom {
   id: number;
   name: string;
   capacity: number;
-  isOccupied: boolean;
-  occupy(): void;
-  release(): void;
+}
+
+export interface IBookingSystem {
+  addRoom(room: IRoom): void;
+  bookMeetingRoom(
+    roomId: number,
+    recipients: IRecipient[],
+    startTime: Date,
+    endTime: Date
+  ): boolean;
+  listRooms(): void;
 }
